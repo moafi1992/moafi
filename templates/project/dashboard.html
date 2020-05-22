@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for i in factor %}
+   <p>{{ i.c_date }}</p>
+  <p>{{ i.invoice_number }}</p>
+   <p>{{ i.buyer_name }}</p>
+<a href="{% url 'invoice:read' i.id %}">more</a>
+{% endfor %}
+
+<a href="{% url 'invoice:create'  %}">create</a>
+
+
+
+
+
+</body>
+</html>

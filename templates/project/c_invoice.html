@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load add_attr %}
+{% block content %}
+
+
+
+
+
+
+
+
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-5 align-self-center">
+                    <h4 class="page-title">Form Repeater</h4>
+                </div>
+                <div class="col-7 align-self-center">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#">Home</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Form Repeater</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+
+            <div class="row">
+
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Dynamic Form Fields</h4>
+                            <div id="education_fields" class=" m-t-20"></div>
+
+
+
+
+                              <form class="row" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+
+                                             {{ form.invoice_number|add_attr:"class:form-control,placeholder:شماره فاکتور" }}
+                                        </div>
+                                    </div>
+                                  <div class="col-sm-3">
+                                        <div class="form-group">
+
+                                             {{ form.seller_name|add_attr:"class:form-control,placeholder:نام فروشنده" }}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+
+                                            {{ form.seller_add|add_attr:"class:form-control,placeholder:آدرس فروشنده" }}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+
+                                             {{ form.seller_num|add_attr:"class:form-control,placeholder:شماره فروشنده" }}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+
+                                            {{ form.buyer_name|add_attr:"class:form-control,placeholder:نام خریدار" }}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+
+                                             {{ form.buyer_add|add_attr:"class:form-control,placeholder:آدرس خریدار" }}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+
+                                            {{ form.buyer_num|add_attr:"class:form-control,placeholder:شماره خریدار" }}
+                                        </div>
+                                    </div>
+                                    <!--<div class="col-sm-2">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="Degree" name="Degree" placeholder="Degree">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <select class="form-control" id="educationDate" name="educationDate">
+                                                <option>Date</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2018">2018</option>
+                                            </select>
+                                        </div>
+                                    </div>-->
+                                    <div class="col-sm-2">
+                                        <div class="form-group">
+                                             <button type="submit">submit</button>
+
+                                        </div>
+                                    </div>
+                                </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center">
+            All Rights Reserved by Nice admin. Designed and Developed by
+            <a href="https://wrappixel.com">WrapPixel</a>.
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+
+
+{% endblock %}
+

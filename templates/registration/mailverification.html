@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    Mail verification<br/>
+    you see this page because your account is not verified By your mail address<hr/>
+    if you didn'nt get verification mailuse the form bellow to get new mail.<br/>
+    thanks<br/>
+    {% if msg %}
+        {{ msg }}
+    {% endif %}
+<form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">resend</button>
+    </form>
+{% endblock %}

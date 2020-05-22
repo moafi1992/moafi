@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load add_attr %}
+
+ <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">submit</button>
+    </form>
+
+{% for m in xo %}
+    {{ m.name }}
+    {{ m.code }}
+    {{ m.price }}
+    {{ m.count }}
+    {{ m.dis_percent }}
+    {{ m.tax }}
+    {{ m.factor }}
+    {{ m.total }}
+{% endfor %}
+{% block content %}
+<div class="page-wrapper">
+
+  <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Basic Table</h4>
+                                <h6 class="card-subtitle">Grid with filtering, editing, inserting, deleting, sorting and paging. Data provided by controller.</h6>
+                                <div id="basicgrid" class="m-t-40"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+
+        <script src="{% static 'dist/js/pages/tables/js-grid-db.js' %}"></script>
+        <script src="{% static 'dist/js/pages/tables/js-grid-init.js' %}"></script>
+        <script src="{% static 'assets/libs/jsgrid/dist/jsgrid.min.js' %}"></script>
+
+{% endblock %}
